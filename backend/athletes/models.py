@@ -8,5 +8,7 @@ class Athletes(models.Model):
     state = models.BooleanField()
 
     def __str__(self):
-        return self.surname + self.name + " born on " + self.birthdate + " (Active)"
-
+        return str(self.surname) + " " + \
+               str(self.name) + \
+               " born on " + str(self.birthdate) + \
+               " (Active)"
