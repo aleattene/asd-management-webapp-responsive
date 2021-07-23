@@ -16,6 +16,7 @@ django-rest-framework==0.1.0
 djangorestframework==3.12.4
 environs==9.3.2
 Flask==2.0.1
+gunicorn==19.9.0
 idna==2.10
 isort==5.7.0
 itsdangerous==2.0.1
