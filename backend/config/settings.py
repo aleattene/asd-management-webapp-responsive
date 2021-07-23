@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     # Local apps
     'athletes',
     # 'athletes.apps.AthletesConfig',
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig',
 
     # 3rd party apps
     'rest_framework',
