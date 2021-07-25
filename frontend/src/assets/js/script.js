@@ -1,19 +1,17 @@
 
-// request for choose test
-console.log(document.cookie);
-fetch("https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?", {
-method: 'GET', // or 'PUT'
-headers: {
-    'Content-Type': 'application/json',
-},
-body: {
-    'response_type': 'code',
-    'client_id': '530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com',
-    'scope': 'email',
-    'redirect_uri': 'https://asdmanagement.netlify.app/callback/'
+console.log('Script OK'); // test
+
+function getAuthorizationCode() {
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var code = urlParams.get('code');
+    var state = urlParams.get('state');
+    var element = document.getElementById("code_state");
+    return element.innerHTML = "<br><br>" +
+    "Authorization code = " + code + "<br><br>" +
+    "State = " + state;
 }
-})
-.then(response => response.json())
-.then(data => {
-    console.log(document.cookie);
-console.log('Success:', data);
+
+console.log('END Script'); // test
+
+
