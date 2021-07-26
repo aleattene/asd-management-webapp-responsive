@@ -1,6 +1,5 @@
 
 console.log('Script OK'); // test
-    ";
 
 function getAuthorizationCode() {
     var queryString = window.location.search;
