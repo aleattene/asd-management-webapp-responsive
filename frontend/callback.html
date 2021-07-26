@@ -8,14 +8,21 @@
 </head>
 <body>
     <div>
-    <h1>Test oAuth Google</h1>
+        <h1>Test oAuth Google</h1>
     </div>
     <div>
-        <button id="btn" onclick="getAuthorizationCode()">
-                Mostra Codice
+        <button id="btn_code" onclick="getAuthorizationCode()">
+                Mostra Authorization Code
         </button>
     </div>
-    <div id = "code_state">
+    <div id = "auth_code">
+    </div>
+    <div>
+        <button id="btn_token" > <!--onclick="getAccessToken()"-->
+                Richiedi Access Token
+        </button>
+    </div>
+    <div id = "access_token">
     </div>
     <script type="text/javascript" src="src/assets/js/script.js" ></script>
 </body>
