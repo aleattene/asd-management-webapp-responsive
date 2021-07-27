@@ -1,8 +1,28 @@
+import requests
+import json
+from django.http import HttpResponse, HttpResponseBadRequest, HttpRequest
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
-
-@api_view(['POST'])
+@csrf_exempt
+# @api_view(['POST'])
 def request_access_token(request):
-    # fare post vs google
-    # google return access token
-    # return access token to client
-    pass
+    data_request = json.loads(request.body)
+    print(data_request["code"])
+
+    url = "https://oauth2.googleapis.com/token"
+
+    payload = {
+        "code": data_request["code"],
+        "client_id": data_request["client_id"],
+        "client_secret": "de9KBrX8LbmAfLqjhsUAzPId",
+        "redirect_uri": "https://asdmanagement.netlify.app/callback/",
+        "grant_type": "authorization_code"
+    }
+
+    response = requests.post(url, params=payload)
+
+    return HttpResponse(response.text, status=200, content_type='application/json')
+
+
+if __name__ == "__main__":
+    request_access_token()
