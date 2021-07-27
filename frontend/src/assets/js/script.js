@@ -45,7 +45,7 @@ function getAccessToken() {
         method: 'POST',
         mode: 'no-cors', // cors, *cors, same-origin
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
         })
@@ -56,8 +56,7 @@ function getAccessToken() {
         .catch(err => {
         console.log("Errors: ", err)
         })
-        }
-
+    }
 
 console.log('END Script'); // test
 

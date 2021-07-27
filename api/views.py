@@ -22,8 +22,10 @@ def request_access_token(request):
     }
 
     response = requests.post(url, params=payload)
+    print(response.headers)
+    print(response.text)
     if response.status_code == 200:
-        return HttpResponse(response.text, status=200, content_type='application/json')
+        return HttpResponse(response.text.json(), status=200, content_type='application/json')
     else:
         return HttpResponseBadRequest("BAD REQUEST")
 
