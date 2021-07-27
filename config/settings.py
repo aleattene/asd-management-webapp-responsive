@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'rest_framework',
+    'corsheaders',
 
     # drf_social_oauth2
     # 'oauth2_provider',
@@ -59,6 +60,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # corsheaders
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -173,3 +178,8 @@ AUTHENTICATION_BACKENDS = (
 #    'https://www.googleapis.com/auth/userinfo.email',
 #    'https://www.googleapis.com/auth/userinfo.profile',
 # ]
+
+# CORS HEADERS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:63342",
+]

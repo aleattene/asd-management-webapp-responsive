@@ -33,8 +33,6 @@ function getCookie(cname) {
 }
 
 
-
-
 function getAccessToken() {
     client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
     code = getCookie("authorization_code")
