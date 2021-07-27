@@ -1,11 +1,15 @@
 import requests
 import json
+from environs import Env
 from django.http import HttpResponse, HttpResponseBadRequest, HttpRequest
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
+
+env = Env()
 
 @csrf_exempt
 # @api_view(['POST'])
 def request_access_token(request):
+    client_secret = env.str("GOOGLE_CLIENT_SECRET")
     print(request.headers)
     print(request.body)
     data_request = json.loads(request.body)
@@ -16,7 +20,7 @@ def request_access_token(request):
     payload = {
         "code": data_request["code"],
         "client_id": data_request["client_id"],
-        "client_secret": "de9KBrX8LbmAfLqjhsUAzPId",
+        "client_secret": client_secret,
         "redirect_uri": "https://asdmanagement.netlify.app/callback/",
         "grant_type": "authorization_code"
     }
