@@ -182,4 +182,5 @@ AUTHENTICATION_BACKENDS = (
 # CORS HEADERS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:63342",
+    "https://asdmanagement.netlify.app",
 ]

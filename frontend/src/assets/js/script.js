@@ -41,7 +41,7 @@ function getAccessToken() {
 
     fetch("http://127.0.0.1:8000/api/token/", {
         method: 'POST',
-        mode: 'no-cors', // cors, *cors, same-origin
+        //mode: 'no-cors', // cors, *cors, same-origin
         headers: {
             'Content-Type': 'application/json'
         },
