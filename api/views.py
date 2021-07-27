@@ -25,10 +25,9 @@ def request_access_token(request):
     print(response.headers)
     print(response.text)
     if response.status_code == 200:
-        return HttpResponse(response.text.json(), status=200, content_type='application/json')
+        return HttpResponse(response, status=200, content_type='application/json')
     else:
-        return HttpResponseBadRequest("BAD REQUEST")
-
+        return HttpResponse(response.status_code)
 
 if __name__ == "__main__":
     request_access_token()

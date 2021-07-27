@@ -49,13 +49,13 @@ function getAccessToken() {
         },
         body: JSON.stringify(data)
         })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch(err => {
-        console.log("Errors: ", err)
-        })
+        .then(response => console.log(response))
+        //.then(data => {
+        //onsole.log('Success:', data);
+        //})
+        //.catch(err => {
+        //console.log("Errors: ", err)
+        //})
     }
 
 console.log('END Script'); // test
