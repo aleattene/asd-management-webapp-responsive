@@ -15,23 +15,51 @@ function getAuthorizationCode() {
     "State = " + state + "<br><br><br><br>";
 }
 
-function getAccessToken(code) {
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+
+
+function getAccessToken() {
     client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
+    code = getCookie("authorization_code")
+    console.log(code)
+
     fetch("http://127.0.0.1:8000/api/token/", {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: {
-    'code': code,
-    'client_id': client_id
-    }
-    })
-    .then(response => response.json())
-    .then(data => {
-    console.log('Success:', data);
-    })
-    }
+        method: 'POST',
+        mode: 'no-cors', // cors, *cors, same-origin
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: {
+        'code': code,
+        'client_id': client_id
+        }
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch(err => {
+        console.log("Errors: ", err)
+        })
+        }
+
 
 console.log('END Script'); // test
 
