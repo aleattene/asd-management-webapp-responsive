@@ -31,7 +31,7 @@ def request_access_token(request):
     if response.status_code == 200:
         return HttpResponse(response, status=200, content_type='application/json')
     else:
-        return HttpResponse("Error " + response.status_code)
+        return HttpResponse(response.status_code)
 
 
 if __name__ == "__main__":

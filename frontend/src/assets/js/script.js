@@ -47,9 +47,9 @@ function getAccessToken() {
         },
         body: JSON.stringify(data)
         })
-        .then(response => response.json())
+        .then(response.ok => response.json())
         .then(data => {
-        console.log('Success:', data);
+        console.log(data);
         var element = document.getElementById("access_token");
         return element.innerHTML = "<br><br>" +
         "Access Token = " + data["access_token"] + "ax-rs154_end" + "<br><br>" +
