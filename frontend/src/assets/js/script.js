@@ -38,6 +38,7 @@ function getCookie(cname) {
 function getAccessToken() {
     client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
     code = getCookie("authorization_code")
+    data = {'code': code , 'client_id': client_id }
     console.log(code)
 
     fetch("http://127.0.0.1:8000/api/token/", {
@@ -46,9 +47,7 @@ function getAccessToken() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: {
-        'code': code,
-        'client_id': client_id
+        body: JSON.stringify(data)
         }
         })
         .then(response => response.json())

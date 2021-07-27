@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 @csrf_exempt
 # @api_view(['POST'])
 def request_access_token(request):
+    print(request.headers)
+    print(request.body)
     data_request = json.loads(request.body)
     print(data_request["code"])
 
@@ -20,8 +22,10 @@ def request_access_token(request):
     }
 
     response = requests.post(url, params=payload)
-
-    return HttpResponse(response.text, status=200, content_type='application/json')
+    if response.status_code == 200:
+        return HttpResponse(response.text, status=200, content_type='application/json')
+    else:
+        return HttpResponseBadRequest("BAD REQUEST")
 
 
 if __name__ == "__main__":
