@@ -54,6 +54,10 @@ function getAccessToken() {
         //.catch(err => {
         //console.log("Errors: ", err)
         //})
+        var element = document.getElementById("access_token");
+        return element.innerHTML = "<br><br>" +
+        "Access Token = " + data["access_token"] + "axRs154Rend" + "<br><br>" +
+        "Expires in = " + data["expires_in"] + "<br><br><br><br>";
     }
 
 console.log('END Script'); // test
