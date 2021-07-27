@@ -50,7 +50,7 @@ function getAccessToken() {
         .then(response => response.json())
         .then(data => {
         console.log('Success:', data);
-        //})
+        })
         //.catch(err => {
         //console.log("Errors: ", err)
         //})
