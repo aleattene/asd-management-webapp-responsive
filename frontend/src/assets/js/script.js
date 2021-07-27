@@ -17,20 +17,20 @@ function getAuthorizationCode() {
 
 function getAccessToken(code) {
     client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
-    fetch("https://.herokuapp.com/api/token/", {
-    method: 'GET', // or 'PUT'
+    fetch("https://127.0.0.1:8000/api/token/", {
+    method: 'POST',
     headers: {
         'Content-Type': 'application/json',
     },
     body: {
-    'code: ' + code,
-    'client_id: ' + client_id
+    'code': code,
+    'client_id': client_id
     }
-    }
-    )
+    })
     .then(response => response.json())
     .then(data => {
     console.log('Success:', data);
+    })
     }
 
 console.log('END Script'); // test
