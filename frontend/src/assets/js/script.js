@@ -17,7 +17,7 @@ function getAuthorizationCode() {
 
 function getAccessToken(code) {
     client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
-    fetch("https://127.0.0.1:8000/api/token/", {
+    fetch("http://127.0.0.1:8000/api/token/", {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
