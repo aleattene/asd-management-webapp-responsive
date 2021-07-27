@@ -47,7 +47,7 @@ function getAccessToken() {
         },
         body: JSON.stringify(data)
         })
-        .then(response.ok => response.json())
+        .then(response => response.json())
         .then(data => {
         console.log(data);
         var element = document.getElementById("access_token");
