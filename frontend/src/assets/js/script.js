@@ -1,6 +1,29 @@
 
-console.log('Script OK'); // test
+console.log('Script OK'); // initial test
 
+
+// Delete all cookies
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
+
+// All cookies are deleted when the page is opened
+deleteAllCookies();
+
+
+// Set the cookie with name "client_id"
+client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
+document.cookie = "client_id = " + client_id
+
+
+// This function retrieves the authorization_code from the query string
 function getAuthorizationCode() {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
@@ -16,6 +39,7 @@ function getAuthorizationCode() {
 }
 
 
+// This function returns the cookie value by name
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -32,13 +56,12 @@ function getCookie(cname) {
   return "";
 }
 
-
+// This function calls the backend API to receive the access_token
 function getAccessToken() {
-    client_id = "530041352646-9gicnsvrup8f95aahl3k67vii713jfot.apps.googleusercontent.com"
+    client_id = getCookie("client_id")
     code = getCookie("authorization_code")
     data = {'code': code , 'client_id': client_id }
-    console.log(code)
-
+    // console.log(code)
     fetch("http://127.0.0.1:8000/api/token/", {
         method: 'POST',
         //mode: 'no-cors', // cors, *cors, same-origin
@@ -50,6 +73,8 @@ function getAccessToken() {
         .then(response => response.json())
         .then(data => {
         console.log(data);
+        document.cookie = "authorization_code=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "access_token = " + data["access_token"];
         var element = document.getElementById("access_token");
         return element.innerHTML = "<br><br>" +
         "Access Token = " + data["access_token"] + "ax-rs154_end" + "<br><br>" +
@@ -61,6 +86,15 @@ function getAccessToken() {
 
     }
 
-console.log('END Script'); // test
+
+// This function deletes a cookie by name
+function deleteCookie(name) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+
+
+console.log('END Script'); // final test
+
 
 
