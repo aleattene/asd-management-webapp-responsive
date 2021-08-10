@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./assets/css/main.css">-->
+    <title>oAuth Callback</title>
+</head>
+<body>
+    <div>
+        <h1>Test oAuth Google</h1>
+    </div>
+    <div>
+        <button id="btn_code" onclick="getAuthorizationCode()">
+                Mostra Authorization Code
+        </button>
+    </div>
+    <div id = "auth_code">
+    </div>
+    <div>
+        <button id="btn_token" onclick="getAccessToken()" style="display:none"> <!--onclick="getAccessToken()"-->
+                Richiedi Access Token
+        </button>
+    </div>
+    <div id = "access_token">
+    </div>
+    <script type="text/javascript" src="src/assets/js/script.js" ></script>
+</body>
+</html>
