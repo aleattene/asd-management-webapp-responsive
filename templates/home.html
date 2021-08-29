@@ -1,1 +1,141 @@
 {% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %} ASD - Home Page {% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+        <!-- BARRA di NAVIGAZIONE -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.jpg' %}" width="100rem" style="float: left"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-expand-xl" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="dropdown">
+                        <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestione Servizi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="opinsertservizio.php">Inserisci Servizio</a>
+                            <a class="dropdown-item" href="opvisualizzaservizi.php">Visualizza Servizi Erogati</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestione Documentazione
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item"
+                               href="opinsertmovimento.php">Registra Movimento Finanziario</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzamovimenti.php">Visualizza Movimenti Finanziari</a>
+                            <a class="dropdown-item"
+                               href="opinsertiscrizione.php">Registra Iscrizione Atleta</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzaiscrizioni.php">Visualizza Iscrizioni Atleti</a>
+                            <a class="dropdown-item"
+                               href="opinsertcertificazione.php">Registra Certficazione Sanitaria</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzacertificazioni.php">Visualizza Certificazioni Sanitarie</a>
+                            <a class="dropdown-item"
+                               href="opinsertcompenso.php">Registra Compensi Collaboratori</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzacompensi.php">Visualizza Compensi Collaboratore</a>
+                            <a class="dropdown-item"
+                               href="opinsertfattura.php">Registra Fatture</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzafatture.php">Visualizza Fatture</a>
+                            <a class="dropdown-item"
+                               href="opinsertacquisto.php">Registra Acquisti</a>
+                            <a class="dropdown-item"
+                               href="opvisualizzaacquisti.php">Visualizza Acquisti</a>
+                            <a class="dropdown-item"
+                               href="opgestioneacquistiut.php">Acquisti e Ricevute Fiscali</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestione Anagrafiche
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="opvisualizzaatletiall.php">Gestione Atleti</a>
+                            <a class="dropdown-item" href="opgestionecollab.php">Gestione Collaboratori</a>
+                            <a class="dropdown-item" href="opgestionemedici.php">Gestione Medici </a>
+                            <a class="dropdown-item" href="opgestionesocieta.php">Gestione Società </a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="btn btn-dark dropdown-toggle " type="button"
+                           id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestione Bandi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="bandiuno.php">Legge 17/1999 art. 22</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="btn btn-dark dropdown-toggle " type="button"
+                           id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<div class="row justify-content-md-center mt-3 pt-3 pb-4">
+    <div class="col-md-4 text-center ">
+        <h3> Benvenuto {{ user.username }} </h3>
+    </div>
+</div>
+
+{% else %}
+    <!-- BARRA di NAVIGAZIONE -->
+      <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <a class="navbar-brand" href="/">
+          {% load static %}
+          <img src="{% static 'img/logo.jpg' %}" width="100rem" style="float: left"></a>
+      </nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="static/img/bolt_1920_910.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/img/rossi_1920_910.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/img/federer_1920_910.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row justify-content-md-center mt-3 pt-3 pb-4">
+    <div class="col-md-4 text-center ">
+        <a href="{% url 'login' %}">Accesso Operatore</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}
