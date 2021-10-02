@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block title %} ASD - Home Page {% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container-fluid bg-light">
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID Servizio</th>
+      <th scope="col">Descrizione Servizio</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Stato Erogazione</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+
+  </thead>
+
+
+  <tbody>
+    {% for service in all_services_list %}
+        <tr>
+            <th scope = 'row' > {{ service.id}}</th>
+            <td>{{ service.description}}
+            <td>{{ service.price}}
+            <td>{% if service.is_active == True %}
+                    Attivo </td>
+                    <td> <a href='#oprevocaserv.php' class='btn btn-success col-md-12'> Archivia </a> </td>
+                {% else %}
+                    Archiviato </td>
+                    <td> <a href='#opripristinaserv.php' class='btn btn-danger  col-md-12'> Ripristina </a> </td>
+                {% endif %}
+            <td> <a href='#' class='btn btn-warning'> Modifica Servizio </a> </td> </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    </div>
+
+{% else %}
+    <div class="container-fluid bg-light">
+YOU ARE NOT AUTHENTICATED
+<a href="{% url 'home' %}" class='btn btn-info'> Go to homepage </a>
+        </div>
+{% endif %}
+
+{% endblock content %}

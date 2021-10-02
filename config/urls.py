@@ -17,6 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls'))
+    # Homepage
+    path('', include('pages.urls')),
+    # Services
+    path('', include('services.urls')),
+    # Users Social Google - TEST
+    # path('accounts/', include('allauth.urls')),
+    # Operator
+    path('accounts/', include('django.contrib.auth.urls')),
+    # Admin
+    path('asd-admin/', admin.site.urls),
+
+
+    # APIs
+    # path('api/', include('api.urls'))
 ]
