@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> ASD Management - Service </title>
+
+</head>
+
+<body>
+
+<%- include('_navbar', {active: ""}); %>
+
+<div class="container-fluid bg-light">
+    <table class="table table-bordered">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID Servizio</th>
+            <th scope="col">Descrizione Servizio</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Stato Erogazione</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <th scope = 'row' > Service Id</th>
+            <td>Service Description
+            <td>Service Price
+            <td> Attivo </td>
+            <td> <a href='#oprevocaserv.php' class='btn btn-success col-md-12'> Archivia </a> </td>
+            <td> Archiviato </td>
+            <td> <a href='#opripristinaserv.php' class='btn btn-danger  col-md-12'> Ripristina </a> </td>
+            <td> <a href='#' class='btn btn-warning'> Modifica Servizio </a> </td> </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+<%- include('_bootstrap', {active: ""}); %>
+
+</html>
