@@ -12,7 +12,7 @@ const homepage = require('./routes/index')
 
 app.use(express.json());
 
-app.use("/", express.static("./static"));
+app.use("/img", express.static("./static/img"));
 
 app.set('view engine', 'ejs');
 

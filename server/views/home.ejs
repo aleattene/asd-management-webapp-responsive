@@ -4,124 +4,22 @@
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> ASD Management </title>
+
 </head>
+
 <body>
-<div class="container-fluid bg-light">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
-            <img src="./img/logo.jpg " width="100rem" style="float: left">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar-expand-xl" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gestione Servizi
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="">Inserisci Servizio</a>
-                        <a class="dropdown-item" href="services">Visualizza Servizi Erogati</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gestione Documentazione
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item"
-                           href="movementts-add">Registra Movimento Finanziario</a>
-                        <a class="dropdown-item"
-                           href="movements-list">Visualizza Movimenti Finanziari</a>
-                        <a class="dropdown-item"
-                           href="opinsertiscrizione.php">Registra Iscrizione Atleta</a>
-                        <a class="dropdown-item"
-                           href="opvisualizzaiscrizioni.php">Visualizza Iscrizioni Atleti</a>
-                        <a class="dropdown-item"
-                           href="opinsertcertificazione.php">Registra Certficazione Sanitaria</a>
-                        <a class="dropdown-item"
-                           href="opvisualizzacertificazioni.php">Visualizza Certificazioni Sanitarie</a>
-                        <a class="dropdown-item"
-                           href="opinsertcompenso.php">Registra Compensi Collaboratori</a>
-                        <a class="dropdown-item"
-                           href="opvisualizzacompensi.php">Visualizza Compensi Collaboratore</a>
-                        <a class="dropdown-item"
-                           href="invoices-add">Registra Fatture</a>
-                        <a class="dropdown-item"
-                           href="invoices-list">Visualizza Fatture</a>
-                        <a class="dropdown-item"
-                           href="purchases-add">Registra Acquisti</a>
-                        <a class="dropdown-item"
-                           href="purchases-list">Visualizza Acquisti</a>
-                        <a class="dropdown-item"
-                           href="purchases-receipts">Acquisti e Ricevute Fiscali</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gestione Anagrafiche
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="opvisualizzaatletiall.php">Gestione Atleti</a>
-                        <a class="dropdown-item" href="opgestionecollab.php">Gestione Collaboratori</a>
-                        <a class="dropdown-item" href="opgestionemedici.php">Gestione Medici </a>
-                        <a class="dropdown-item" href="opgestionesocieta.php">Gestione Società </a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle " type="button"
-                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gestione Bandi
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="bandiuno.php">Legge 17/1999 art. 22</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a class="btn btn-dark dropdown-toggle " type="button"
-                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Username
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="logout">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+
+    <%- include('_navbar', {active: ""}); %>
+
+    <%- include('_carousel', {active: ""}); %>
+
 </body>
 
-<!-- BOOSTRAP CDN -->
-<link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-    crossorigin="anonymous"
-/>
-
-<script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-></script>
-
-<script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"
-></script>
-
-<script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"
-></script>
+    <%- include('_bootstrap', {active: ""}); %>
 
 </html>
