@@ -1,5 +1,7 @@
 # ASD-Management
 
+[![codecov](https://codecov.io/gh/aleattene/asd-management-webapp-responsive/branch/main/graph/badge.svg?token=TBZQE4DBR3)](https://codecov.io/gh/aleattene/asd-management-webapp-responsive)
+
 *Work in Progress....*
 
 Temporary deploy:
