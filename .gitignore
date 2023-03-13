@@ -68,7 +68,7 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 # dotenv environment variables file
-server/.env
+old_backup/server/.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)

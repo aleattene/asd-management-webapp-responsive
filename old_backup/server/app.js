@@ -5,7 +5,7 @@ const app = express();
 
 //const cors = require('cors');
 
-const homepage = require('./routes/index')
+const homepage = require('./routes')
 
 //app.use(cors());
 
