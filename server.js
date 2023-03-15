@@ -1,11 +1,13 @@
 
 // Require the framework and instantiate it
-const fastify = require('fastify')({ logger: true })
+import Fastify from 'fastify'
 
-// Declare a route
-fastify.get('/', async (request, reply) => {
-    return { hello: 'world' }
+const fastify = Fastify({
+    logger: true
 })
+
+
+fastify.register(import('./routes/index.js'))
 
 // Run the server!
 const start = async () => {
