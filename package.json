@@ -11,6 +11,8 @@
   },
   "type": "module",
   "scripts": {
-    "test": "tap"
+    "test": "tap \"test/**/*.test.js\"",
+    "local:start": "fastify start -l info app.js",
+    "local:dev": "fastify start -l info -P app.js"
   }
 }
